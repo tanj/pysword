@@ -33,7 +33,7 @@
 
 import os
 modules_path = os.environ["HOME"]+"/.sword/modules/texts/ztext"
-from books import ref_to_index, testaments, find_book, Book
+from .books import ref_to_index, testaments, find_book, Book
 
 import struct, zlib
 from os.path import join as path_join
@@ -106,6 +106,6 @@ if __name__=='__main__':
     mod_name, book, chapter, verse = sys.argv[1:]
    
     module = ZModule(mod_name)
-    print module.text_for_ref(book, chapter, verse)
+    print(module.text_for_ref(book, chapter, verse))
     
     

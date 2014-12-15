@@ -1,6 +1,6 @@
 def find_book(name):
     name = name.lower()
-    for testament, books in testaments.iteritems():
+    for testament, books in testaments.items():
         for num, book in enumerate(books):
             if book.name_matches(name):
                 return book
@@ -26,7 +26,7 @@ class Book(object):
         self.chapter_lengths = chapter_lengths
         self.num_chapters = len(chapter_lengths)
 
-    def __repr__(self): return u'Book(%s)' % self.name
+    def __repr__(self): return 'Book(%s)' % self.name
     
     def name_matches(self, name):
         name = name.lower()
@@ -115,7 +115,7 @@ Book('Revelation of John', 'Rev', 'Rev', [20, 29, 22, 11, 14, 17, 17, 13, 21, 11
 
 # Compute index offsets and add other data
 # FIXME: this is still a little hairy.
-for testament, books in testaments.iteritems():
+for testament, books in testaments.items():
     idx = 1 # start after the testament heading
     for book in books:
         book.testament = testament
